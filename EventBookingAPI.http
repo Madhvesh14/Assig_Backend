@@ -1,6 +1,54 @@
 @EventBookingAPI_HostAddress = http://localhost:5280
 
-GET {{EventBookingAPI_HostAddress}}/weatherforecast/
+
+
+
+### Get All Events
+GET {{EventBookingAPI_HostAddress}}/api/events
 Accept: application/json
+
+###
+
+### Get Event By Id
+GET {{EventBookingAPI_HostAddress}}/api/events/1
+Accept: application/json
+
+###
+
+### Create Event
+POST {{EventBookingAPI_HostAddress}}/api/events
+Content-Type: application/json
+
+{
+  "title": "Music Concert",
+  "description": "Live music show",
+  "location": "Bangalore",
+  "eventDate": "2026-06-20T18:00:00Z",
+  "totalSeats": 100,
+  "availableSeats": 100,
+  "price": 499
+}
+
+###
+
+### Update Event
+PUT {{EventBookingAPI_HostAddress}}/api/events/1
+Content-Type: application/json
+
+{
+  "id": 1,
+  "title": "Updated Concert",
+  "description": "Updated Description",
+  "location": "Mysore",
+  "eventDate": "2026-06-25T18:00:00Z",
+  "totalSeats": 150,
+  "availableSeats": 120,
+  "price": 799
+}
+
+###
+
+### Delete Event
+DELETE {{EventBookingAPI_HostAddress}}/api/events/1
 
 ###
